@@ -4,7 +4,7 @@
 This capstone project will be completed to conclude the [Data Science Bootcamp](https://www.lighthouselabs.ca/en/data-science-bootcamp) at Lighthouse Labs.  
 
 ### Partner
-![](Images/Logo.jpg)
+![Simpson Controls](Images/Logo.jpg)
 Contact: [Taylor Simpson](mailto:taylor@simpsoncontrols.com)
 
 ## Project Overview

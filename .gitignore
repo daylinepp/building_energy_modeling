@@ -1,6 +1,9 @@
 # raw data folder
 raw_data/
 
+# profiling report
+*.html
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
