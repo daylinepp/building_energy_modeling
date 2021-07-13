@@ -67,16 +67,15 @@ The ultimate goal of this work would be to produce detailed information about ea
 
 ## External Materials
 * [Capstone Demo Presentation](link)
-* [Forecasting Web App](link) via Streamlit
+* Forecasting Web App via Streamlit
 
 ## Collaboration
-The raw data used in this project is proprietary, and therefore not available.  
-However, you can find source code for all of the work completed within this repository. I would be happy to receive feedback, and to discuss possibilities for future work.
+The raw data used in this project is proprietary, and therefore not available. However, you can find source code for all of the work completed within this repository. I would be happy to receive feedback, and to discuss possibilities for future work.
 
 If you are interested in further discussion, you can feel free to contact me by **[email](mailto:daylin.epp@gmail.com)** or on **[LinkedIn][linkedin]**.
 
 ### Industry Contributor
-![Simpson Controls](Images/Logo.jpg)  
+![Simpson Controls](images/Logo.jpg)  
 
 You can also reach out to Simpson Controls, the owner of the data used for this project.  
 Contact: [Taylor Simpson](mailto:taylor@simpsoncontrols.com)
