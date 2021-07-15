@@ -19,7 +19,7 @@ st.header("Consumption Forecasting & System Analysis")
 st.markdown("Web App by [Daylin Epp](https://www.linkedin.com/in/daylin-epp-62989760/)")
 st.write("---")
 st.markdown("")
-st.markdown("Project Description")
+st.markdown("Please visit the project repository for more information ")
 
 # Prophet Forecasting
 ##################################################################################
@@ -42,6 +42,8 @@ CONS_UNI = 'Univariate Forecast'
 CONS_MULTI = ' Multivariate Forecast'
 
 # Prophet Forecasting Model
+
+# will need to add a cache to improve load times once each option has been run
 #@st.cache(allow_output_mutation=True)
 def make_forecast(selection):
 
@@ -99,3 +101,53 @@ st.plotly_chart(plotly_components)
 
 # Predictive Modeling
 ##################################################################################
+model = pickle.load(open("lgb_model_v2.sav", "rb"))
+
+def prediction(Point_34, Point_17, Point_37, Point_21, 
+               Point_194, Point_26, Point_22, Point_9, 
+               Point_13, Point_23, Point_90, Point_198, Point_10):
+
+    df = pd.DataFrame([{'Point_34': Point_34, 
+                        'Point_17': Point_17, 
+                        'Point_37': Point_37, 
+                        'Point_21': Point_21, 
+                        'Point_194': Point_194, 
+                        'Point_26': Point_26, 
+                        'Point_22': Point_22, 
+                        'Point_9': Point_9, 
+                        'Point_13': Point_13, 
+                        'Point_23': Point_23, 
+                        'Point_90': Point_90, 
+                        'Point_198': Point_198, 
+                        'Point_10': Point_10}])
+    
+    pred = model.predict(df)
+    return pred
+
+st.header("Energy Consumption Prediction")
+st.markdown("Now you can try out the model by setting values for each feature."
+            "")
+
+Point_90 = st.slider('Average Outside Air Temp', -2.0, 33.0, 10.0, 0.5)
+Point_21 = st.slider('Mixed Air Temp', 10.0, 40.0, 20.0, 0.5)
+Point_22 = st.slider('Min Room Error', -10.0, 10.0, 0.0, 0.5)
+Point_37 = st.slider('Supply Air Temp', 9.0, 33.0, 18.0, 0.5)
+Point_26 = st.slider('Max Room Temp', 19.0, 35.0, 25.0, 0.5)
+Point_17 = st.slider('Total Flow', 0.0, 7475.0, 3000.0, 25.0)
+Point_194 = st.slider('Make Up Air Unit 1 Supply Temp', 12.0, 34.0, 22.0, 0.5)
+Point_198 = st.slider('Make Up Air Unit 2 Supply Temp', 12.0, 34.0, 22.0, 0.5)
+Point_13 = st.slider('Duct Pressure Point', 0.0, 480.0, 200.0, 10.0)
+Point_23 = st.slider('Min Room Temp', 14.0, 27.0, 21.0, 0.5)
+Point_34 = st.slider('Set Point', 10.0, 33.0, 20.0, 0.5)
+Point_9 = st.slider('Return Carbon Dioxide', 390.0, 730.0, 450.0, 10.0)
+Point_10  = st.selectbox('Air Handling Unit Supply Fan',("ON","OFF"))
+
+if st.button('Make Hourly Energy Consumption Prediction'):
+    result = prediction(Point_34, Point_17, Point_37, Point_21, 
+                        Point_194, Point_26, Point_22, Point_9, 
+                        Point_13, Point_23, Point_90, Point_198, Point_10)
+    consumption = round(result[0], 1)
+    try:
+        st.write(consumption, 'kWh')
+    except:
+        pass

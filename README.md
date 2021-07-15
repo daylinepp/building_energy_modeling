@@ -66,7 +66,7 @@ The ultimate goal of this work would be to produce detailed information about ea
 </details>
 
 ## External Materials
-* [Capstone Demo Presentation](link)
+* [Capstone Demo Presentation][presentation]
 * Forecasting Web App via Streamlit
 
 ## Collaboration
@@ -80,6 +80,7 @@ If you are interested in further discussion, you can feel free to contact me by 
 You can also reach out to Simpson Controls, the owner of the data used for this project.  
 Contact: [Taylor Simpson](mailto:taylor@simpsoncontrols.com)
 
+[presentation]: https://drive.google.com/file/d/1B14PmA7SQkcFQNq2UeA5Xk5CXL7FCK2g/view?usp=sharing
 [linkedin]: https://www.linkedin.com/in/daylin-epp-62989760/
 [LighthouseLabs]: https://www.lighthouselabs.ca/en/data-science-bootcamp
 [Prophet]: https://facebook.github.io/prophet/docs/quick_start.html#python-api
