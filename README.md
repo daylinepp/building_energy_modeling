@@ -1,6 +1,6 @@
 # Building Energy Modeling
 
-### Project Status: [Active]
+### Project Status: [Complete]
 This capstone project will be completed to conclude the [Data Science Bootcamp][LighthouseLabs] at Lighthouse Labs.  
 
 ## Project Information
